@@ -18,69 +18,57 @@ body{
 header{
   padding:20px;
   border-bottom:1px solid rgba(255,0,0,0.3);
-  background:rgba(0,0,0,0.9);
+  text-align:center;
 }
 
 .logo{
-  font-size:34px;
+  font-size:32px;
   font-weight:900;
-  background:linear-gradient(90deg,#ff0000,#ff4d4d);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-nav{
-  margin-top:10px;
-}
-
-nav a{
-  margin-right:15px;
-  color:white;
-  transition:0.3s;
-}
-
-nav a:hover{
   color:red;
+}
+
+/* COVER LOGO */
+.cover{
+  margin:20px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 0 30px rgba(255,0,0,0.3);
+}
+
+.cover img{
+  width:100%;
 }
 
 /* HERO */
 .hero{
-  padding:80px 20px;
-  background:radial-gradient(circle at center,rgba(255,0,0,0.1),transparent);
+  padding:40px;
+  text-align:center;
 }
 
 .hero h1{
-  font-size:45px;
-  margin-bottom:20px;
+  font-size:38px;
 }
 
-.hero span{
+.red{
   color:red;
 }
 
 .hero p{
   color:#ccc;
-  margin-bottom:25px;
+  margin:20px 0;
 }
 
 /* BUTTONS */
 .btn{
-  padding:14px 24px;
+  padding:14px 25px;
   border-radius:12px;
   margin:5px;
   display:inline-block;
-  font-weight:bold;
-  transition:0.3s;
 }
 
 .btn-red{
-  background:linear-gradient(45deg,#ff0000,#ff4d4d);
+  background:red;
   color:white;
-  box-shadow:0 0 15px rgba(255,0,0,0.4);
-}
-
-.btn-red:hover{
-  box-shadow:0 0 25px rgba(255,0,0,0.7);
 }
 
 .btn-outline{
@@ -88,42 +76,17 @@ nav a:hover{
   color:red;
 }
 
-/* LOGO COVER */
-.cover{
-  margin:30px;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid rgba(255,0,0,0.3);
-  box-shadow:0 0 30px rgba(255,0,0,0.2);
-}
-
-.cover img{
-  width:100%;
-}
-
-/* SECTION */
-.section{
-  padding:50px 20px;
-}
-
-.section h2{
-  color:red;
-  margin-bottom:20px;
-}
-
 /* CARDS */
+.section{
+  padding:30px;
+}
+
 .card{
   background:#111;
-  border:1px solid rgba(255,0,0,0.2);
+  border:1px solid rgba(255,0,0,0.3);
   padding:20px;
-  margin:15px 0;
+  margin:10px 0;
   border-radius:15px;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 20px rgba(255,0,0,0.3);
 }
 
 /* FLOAT BUTTONS */
@@ -132,7 +95,7 @@ nav a:hover{
   bottom:20px;
   right:20px;
   background:#25D366;
-  padding:15px 18px;
+  padding:15px;
   border-radius:50px;
 }
 
@@ -153,76 +116,42 @@ nav a:hover{
 <header>
 <h1 class="logo">LAARF RENT CAR</h1>
 <p>Location de voitures à Marrakech • Livraison partout</p>
-
-<nav>
-<a href="#">Accueil</a>
-<a href="#">Voitures</a>
-<a href="#">Réservation</a>
-<a href="#">Contact</a>
-</nav>
-
-<a href="tel:+212664781956" class="btn btn-outline">📞 Appeler</a>
-<a href="https://wa.me/212664781956" class="btn btn-red">WhatsApp</a>
 </header>
 
-<!-- LOGO COVER -->
+<!-- LOGO QUI MARCHE -->
 <div class="cover">
 <img src="https://i.imgur.com/3ZQ3Z7R.png">
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Location de voitures <span>premium</span> à Marrakech</h1>
+<h1>Location de voitures <span class="red">premium</span></h1>
+<p>Service rapide • Livraison partout • Réservation facile</p>
 
-<p>Service haut de gamme, rapide et professionnel.</p>
-
-<a href="#" class="btn btn-red">Réserver maintenant</a>
-<a href="https://wa.me/212664781956" class="btn btn-outline">WhatsApp</a>
+<a href="tel:+212664781956" class="btn btn-outline">📞 Appeler</a>
+<a href="https://wa.me/212664781956" class="btn btn-red">WhatsApp</a>
 </div>
 
 <!-- VOITURES -->
 <div class="section">
-<h2>Nos voitures</h2>
+<h2 class="red">Nos voitures</h2>
 
-<div class="card">
-<h3>Dacia Logan</h3>
-<p>250 DH / jour</p>
-</div>
-
-<div class="card">
-<h3>Renault Clio</h3>
-<p>320 DH / jour</p>
-</div>
-
-<div class="card">
-<h3>Range Rover</h3>
-<p>1200 DH / jour</p>
-</div>
-
-</div>
-
-<!-- AVIS -->
-<div class="section">
-<h2>Avis clients</h2>
-
-<div class="card">⭐ Service rapide et sérieux</div>
-<div class="card">⭐ Très bonne expérience</div>
-<div class="card">⭐ Je recommande 💯</div>
+<div class="card">Dacia Logan - 250 DH</div>
+<div class="card">Renault Clio - 320 DH</div>
+<div class="card">Range Rover - 1200 DH</div>
 
 </div>
 
 <!-- CONTACT -->
 <div class="section">
-<h2>Contact</h2>
+<h2 class="red">Contact</h2>
 
 <p>📍 Marrakech</p>
 <p>📞 +212 664 781956</p>
 
-<br>
-
 <iframe 
 src="https://maps.google.com/maps?q=marrakech&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300" style="border-radius:15px;">
+width="100%" height="250" style="border-radius:15px;">
 </iframe>
 
 </div>
