@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOL LUXURY & LAARF RENT CAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f4d77b;
+      --gold-dark: #9f7a1c;
+      --bg-1: #05070d;
+      --bg-2: #0c1220;
+      --card: rgba(255,255,255,0.05);
+      --line: rgba(212,175,55,0.28);
+      --text: #ffffff;
+      --muted: #d7d7d7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,0.10), transparent 30%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.03) 50%, transparent 100%);
+      pointer-events: none;
+      animation: shineBg 7s linear infinite;
+    }
+
+    @keyframes shineBg {
+      0% { transform: translateX(-30%); }
+      100% { transform: translateX(30%); }
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: 0 auto;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      animation: revealUp 1s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.35s; }
+    .delay-3 { animation-delay: 0.55s; }
+    .delay-4 { animation-delay: 0.75s; }
+
+    @keyframes revealUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo-wrap {
+      padding: 18px 0 8px;
+      text-align: center;
+    }
+
+    .logo-wrap img {
+      width: min(100%, 980px);
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow:
+        0 12px 45px rgba(0,0,0,0.55),
+        0 0 25px rgba(212,175,55,0.10);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 0 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin: 0 auto 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 190px;
+      padding: 14px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    }
+
+    .btn-gold {
+      color: #101010;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+      box-shadow: 0 8px 22px rgba(212,175,55,0.28);
+    }
+
+    .btn-dark {
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 26px rgba(0,0,0,0.25);
+    }
+
+    section {
+      padding: 38px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 26px;
+    }
+
+    .gold-line {
+      width: 140px;
+      height: 3px;
+      margin: 0 auto 30px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .car-card {
+      position: relative;
+      padding: 26px 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+
+    .car-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 15%, rgba(212,175,55,0.10), transparent 85%);
+      transform: translateX(-120%);
+      transition: transform 0.8s ease;
+    }
+
+    .car-card:hover::before {
+      transform: translateX(120%);
+    }
+
+    .car-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,175,55,0.55);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.28);
+    }
+
+    .car-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow:
+        0 1px 0 #5b4610,
+        0 2px 0 #4b390d,
+        0 3px 0 #3d2e0a,
+        0 8px 14px rgba(0,0,0,0.45),
+        0 0 14px rgba(212,175,55,0.28);
+    }
+
+    .car-note {
+      margin-top: 10px;
+      color: #d8d8d8;
+      font-size: 0.92rem;
+    }
+
+    .booking-box,
+    .reviews-box,
+    .services-box {
+      max-width: 820px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.22);
+    }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-item {
+      padding: 18px;
+      text-align: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(10,14,24,0.82);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+    }
+
+    input::placeholder {
+      color: #b8b8b8;
+    }
+
+    .submit-btn {
+      border: none;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      color: #101010;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.30);
+    }
+
+    .reviews {
+      display: grid;
+      gap: 14px;
+    }
+
+    .review {
+      padding: 18px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stars {
+      color: #ffd95f;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+
+    .review p {
+      color: #efefef;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 24px 0 36px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer .footer-brand {
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-top: 8px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+      animation: pulse 1.9s infinite;
+      z-index: 999;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.50); }
+      70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    @media (max-width: 980px) {
+      .fleet-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .fleet-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 26px;
+      }
+
+      .booking-box,
+      .reviews-box,
+      .services-box {
+        padding: 20px;
+      }
+
+      .car-name {
+        font-size: 1.05rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo-wrap reveal">
+      <img src="logo.png" alt="Logo AOL Luxury & LAARF Rent Car">
+    </div>
+
+    <section class="hero">
+      <h1 class="reveal delay-1">Location de voitures de luxe à Marrakech</h1>
+      <p class="reveal delay-2">
+        AOL LUXURY & LAARF RENT CAR vous propose une flotte premium, un service rapide,
+        une livraison sur demande et une réservation facile par téléphone ou WhatsApp.
+      </p>
+
+      <div class="hero-buttons reveal delay-3">
+        <a class="btn btn-gold" href="tel:06647819956">📞 Appeler maintenant</a>
+        <a class="btn btn-dark" href="https://wa.me/212664781956" target="_blank">💬 Réserver sur WhatsApp</a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title reveal">Notre flotte premium</h2>
+      <p class="section-subtitle reveal delay-1">
+        Des modèles élégants, confortables et modernes pour vos déplacements à Marrakech.
+      </p>
+      <div class="gold-line reveal delay-2"></div>
+
+      <div class="fleet-grid">
+        <div class="car-card reveal"><div class="car-name">Porsche Macan</div><div class="car-note">SUV premium</div></div>
+        <div class="car-card reveal delay-1"><div class="car-name">Volkswagen Golf 8</div><div class="car-note">Compacte moderne</div></div>
+        <div class="car-card reveal delay-2"><div class="car-name">Volkswagen T-Roc</div><div class="car-note">SUV urbain</div></div>
+        <div class="car-card reveal delay-3"><div class="car-name">Volkswagen Touareg</div><div class="car-note">SUV haut de gamme</div></div>
+        <div class="car-card reveal"><div class="car-name">Renault Clio 5</div><div class="car-note">Citadine élégante</div></div>
+        <div class="car-card reveal delay-1"><div class="car-name">Mercedes Classe A</div><div class="car-note">Confort et prestige</div></div>
+        <div class="car-card reveal delay-2"><div class="car-name">Cupra Leon</div><div class="car-note">Sportive raffinée</div></div>
+        <div class="car-card reveal delay-3"><div class="car-name">Audi A3 S Line</div><div class="car-note">Style et performance</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title reveal">Nos services</h2>
+      <div class="gold-line reveal delay-1"></div>
+
+      <div class="services-box reveal delay-2">
+        <div class="services-list">
+          <div class="service-item">Livraison rapide à Marrakech</div>
+          <div class="service-item">Réservation simple et rapide</div>
+          <div class="service-item">Service premium 7j/7</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title reveal">Réservation rapide</h2>
+      <p class="section-subtitle reveal delay-1">
+        Remplissez le formulaire et votre demande sera envoyée directement sur WhatsApp.
+      </p>
+      <div class="gold-line reveal delay-2"></div>
+
+      <div class="booking-box reveal delay-3">
+        <form onsubmit="sendWhatsApp(event)">
+          <div class="form-row">
+            <input type="text" id="nom" placeholder="Votre nom" required>
+            <input type="tel" id="telephone" placeholder="Votre téléphone" required>
+          </div>
+
+          <div class="form-row">
+            <input type="date" id="date" required>
+            <select id="voiture" required>
+              <option value="">Choisissez un véhicule</option>
+              <option>Porsche Macan</option>
+              <option>Volkswagen Golf 8</option>
+              <option>Volkswagen T-Roc</option>
+              <option>Volkswagen Touareg</option>
+              <option>Renault Clio 5</option>
+              <option>Mercedes Classe A</option>
+              <option>Cupra Leon</option>
+              <option>Audi A3 S Line</option>
+            </select>
+          </div>
+
+          <button class="submit-btn" type="submit">Réserver maintenant</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title reveal">Avis clients</h2>
+      <div class="gold-line reveal delay-1"></div>
+
+      <div class="reviews-box reveal delay-2">
+        <div class="reviews">
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Service excellent, réservation rapide et accueil professionnel.</p>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Voitures propres, confortables et livraison rapide à Marrakech.</p>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Très bonne expérience, équipe sérieuse et service haut de gamme.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div>📍 Marrakech | 📞 06647819956</div>
+      <div class="footer-brand">© AOL LUXURY & LAARF RENT CAR</div>
+    </footer>
+  </div>
+
+  <a class="whatsapp-float" href="https://wa.me/212664781956" target="_blank" aria-label="WhatsApp">💬</a>
+
+  <script>
+    function sendWhatsApp(e) {
+      e.preventDefault();
+
+      const nom = document.getElementById("nom").value.trim();
+      const telephone = document.getElementById("telephone").value.trim();
+      const date = document.getElementById("date").value;
+      const voiture = document.getElementById("voiture").value;
+
+      const message =
+        "Bonjour, je souhaite réserver une voiture.%0A" +
+        "Nom : " + encodeURIComponent(nom) + "%0A" +
+        "Téléphone : " + encodeURIComponent(telephone) + "%0A" +
+        "Date : " + encodeURIComponent(date) + "%0A" +
+        "Véhicule : " + encodeURIComponent(voiture);
+
+      window.open("https://wa.me/212664781956?text=" + message, "_blank");
+    }
+  </script>
+</body>
+</html>
