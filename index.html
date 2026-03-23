@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARRAKECH DRIVE - Location de voitures à Marrakech</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #111111;
+      --secondary: #d4af37;
+      --light: #f7f7f7;
+      --white: #ffffff;
+      --gray: #666666;
+      --border: #e5e5e5;
+      --success: #25D366;
+      --danger: #c62828;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--white);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      background: var(--primary);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      color: var(--secondary);
+    }
+
+    .logo p {
+      font-size: 12px;
+      color: #ddd;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--white);
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    .btn-whatsapp {
+      background: var(--success);
+      color: var(--white);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: var(--white);
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      padding: 60px 0;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #f0f0f0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-dark {
+      background: var(--primary);
+      color: var(--white);
+      border: 1px solid var(--white);
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .info-bar {
+      background: var(--light);
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .info-box {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .info-box h4 {
+      margin-bottom: 8px;
+      color: var(--secondary);
+    }
+
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .car-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .car-content {
+      padding: 20px;
+    }
+
+    .car-content h4 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--secondary);
+      margin-bottom: 14px;
+    }
+
+    .car-features {
+      list-style: none;
+      margin-bottom: 18px;
+      color: var(--gray);
+    }
+
+    .car-features li {
+      margin-bottom: 6px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .service-box {
+      background: var(--light);
+      padding: 28px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .service-box h4 {
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .reservation-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .form-card, .summary-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .payment-options {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .payment-box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fafafa;
+    }
+
+    .payment-box input {
+      margin-right: 8px;
+    }
+
+    .summary-card h4 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #ddd;
+      padding-bottom: 8px;
+      gap: 10px;
+    }
+
+    .summary-total {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--secondary);
+      margin-top: 15px;
+    }
+
+    .note {
+      background: #fff8e1;
+      color: #6b5200;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-top: 15px;
+      border: 1px solid #f0df9d;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-box {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      padding: 30px 0;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .footer-links {
+      margin: 12px 0;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #ddd;
+    }
+
+    .fixed-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: var(--success);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 18px;
+      background: #e8f5e9;
+      color: #1b5e20;
+      border: 1px solid #c8e6c9;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 992px) {
+      .cars-grid,
+      .services-grid,
+      .contact-grid,
+      .info-grid,
+      .reservation-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .cars-grid,
+      .services-grid,
+      .contact-grid,
+      .info-grid,
+      .reservation-wrap,
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 50px 0;
+      }
+
+      .section-title h3 {
+        font-size: 28px;
+      }
+
+      .fixed-whatsapp {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container topbar">
+      <div class="logo">
+        <h1>MARRAKECH DRIVE</h1>
+        <p>Location de voitures à Marrakech - Livraison partout</p>
+      </div>
+
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#vehicules">Véhicules</a>
+        <a href="#services">Services</a>
+        <a href="#reservation">Réservation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn-whatsapp" href="https://wa.me/212600000000" target="_blank">
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <section class="hero" id="accueil">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Louez votre voiture à Marrakech en quelques minutes</h2>
+        <p>
+          Service rapide, livraison partout, réservation en ligne, paiement en ligne ou sur place.
+          Une expérience simple, moderne et professionnelle.
+        </p>
+        <div class="hero-buttons">
+          <a href="#reservation" class="btn btn-primary">Réserver maintenant</a>
+          <a href="https://wa.me/212600000000" target="_blank" class="btn btn-dark">Contacter sur WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-bar">
+    <div class="container info-grid">
+      <div class="info-box">
+        <h4>📍 Basé à Marrakech</h4>
+        <p>Service local rapide et fiable</p>
+      </div>
+      <div class="info-box">
+        <h4>🚗 Livraison partout</h4>
+        <p>Aéroport, hôtel, gare, domicile</p>
+      </div>
+      <div class="info-box">
+        <h4>💳 Paiement flexible</h4>
+        <p>En ligne ou sur place</p>
+      </div>
+      <div class="info-box">
+        <h4>📲 Réservation facile</h4>
+        <p>Site web + WhatsApp direct</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="vehicules">
+    <div class="container">
+      <div class="section-title">
+        <h3>Nos véhicules</h3>
+        <p>Choisissez la voiture qui correspond à votre besoin et à votre budget.</p>
+      </div>
+
+      <div class="cars-grid">
+        <div class="car-card">
+          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80" alt="Citadine économique" />
+          <div class="car-content">
+            <h4>Dacia Logan</h4>
+            <div class="price">250 DH / jour</div>
+            <ul class="car-features">
+              <li>✔ Climatisation</li>
+              <li>✔ Boîte manuelle</li>
+              <li>✔ Faible consommation</li>
+              <li>✔ Idéale pour la ville</li>
+            </ul>
+            <a href="#reservation" class="btn btn-primary" onclick="selectCar('Dacia Logan', 250)">Réserver</a>
+          </div>
+        </div>
+
+        <div class="car-card">
+          <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80" alt="SUV urbain" />
+          <div class="car-content">
+            <h4>Renault Clio</h4>
+            <div class="price">320 DH / jour</div>
+            <ul class="car-features">
+              <li>✔ Confort premium</li>
+              <li>✔ Économique</li>
+              <li>✔ Parfaite pour couples/familles</li>
+              <li>✔ Très demandée</li>
+            </ul>
+            <a href="#reservation" class="btn btn-primary" onclick="selectCar('Renault Clio', 320)">Réserver</a>
+          </div>
+        </div>
+
+        <div class="car-card">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80" alt="Voiture luxe" />
+          <div class="car-content">
+            <h4>Range Rover</h4>
+            <div class="price">1200 DH / jour</div>
+            <ul class="car-features">
+              <li>✔ Luxe et puissance</li>
+              <li>✔ Boîte automatique</li>
+              <li>✔ Parfaite pour événements</li>
+              <li>✔ Livraison disponible</li>
+            </ul>
+            <a href="#reservation" class="btn btn-primary" onclick="selectCar('Range Rover', 1200)">Réserver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services" style="background:#fafafa;">
+    <div class="container">
+      <div class="section-title">
+        <h3>Pourquoi choisir MARRAKECH DRIVE ?</h3>
+        <p>Un service pensé pour rassurer le client et simplifier la location de voiture au Maroc.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-box">
+          <h4>🚘 Véhicules propres et fiables</h4>
+          <p>Nous proposons des voitures bien entretenues, confortables et prêtes à rouler.</p>
+        </div>
+        <div class="service-box">
+          <h4>🕒 Service rapide</h4>
+          <p>Réponse rapide sur WhatsApp et validation facile de votre réservation.</p>
+        </div>
+        <div class="service-box">
+          <h4>📍 Livraison partout</h4>
+          <p>Marrakech, aéroport, hôtels et autres villes selon demande.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reservation">
+    <div class="container">
+      <div class="section-title">
+        <h3>Réservation en ligne</h3>
+        <p>Remplissez le formulaire pour réserver votre voiture. Le prix se calcule automatiquement.</p>
+      </div>
+
+      <div class="reservation-wrap">
+        <div class="form-card">
+          <form id="bookingForm">
+            <div class="row">
+              <div class="form-group">
+                <label>Nom complet</label>
+                <input type="text" id="name" placeholder="Votre nom complet" required>
+              </div>
+              <div class="form-group">
+                <label>Téléphone</label>
+                <input type="tel" id="phone" placeholder="+212..." required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Votre email" required>
+              </div>
+              <div class="form-group">
+                <label>Voiture</label>
+                <select id="car" required>
+                  <option value="">Choisir un véhicule</option>
+                  <option value="Dacia Logan" data-price="250">Dacia Logan - 250 DH/jour</option>
+                  <option value="Renault Clio" data-price="320">Renault Clio - 320 DH/jour</option>
+                  <option value="Range Rover" data-price="1200">Range Rover - 1200 DH/jour</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label>Date de départ</label>
+                <input type="date" id="pickupDate" required>
+              </div>
+              <div class="form-group">
+                <label>Date de retour</label>
+                <input type="date" id="returnDate" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label>Lieu de livraison</label>
+                <input type="text" id="deliveryPlace" placeholder="Ex: Aéroport Marrakech Menara" required>
+              </div>
+              <div class="form-group">
+                <label>Heure de livraison</label>
+                <input type="time" id="deliveryTime" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Mode de paiement</label>
+              <div class="payment-options">
+                <label class="payment-box">
+                  <input type="radio" name="payment" value="Paiement en ligne" checked>
+                  Paiement en ligne
+                </label>
+                <label class="payment-box">
+                  <input type="radio" name="payment" value="Paiement sur place">
+                  Paiement sur place
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Message ou demande spéciale</label>
+              <textarea id="message" placeholder="Ex: Livraison à l’hôtel, siège bébé, boîte automatique..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;">Confirmer la réservation</button>
+          </form>
+
+          <div class="success-message" id="successMessage">
+            Réservation envoyée avec succès. Vous pouvez maintenant confirmer sur WhatsApp.
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <h4>Résumé de réservation</h4>
+
+          <div class="summary-line">
+            <span>Voiture :</span>
+            <strong id="summaryCar">-</strong>
+          </div>
+
+          <div class="summary-line">
+            <span>Prix / jour :</span>
+            <strong id="summaryPrice">0 DH</strong>
+          </div>
+
+          <div class="summary-line">
+            <span>Nombre de jours :</span>
+            <strong id="summaryDays">0</strong>
+          </div>
+
+          <div class="summary-line">
+            <span>Livraison :</span>
+            <strong>Incluse / à confirmer</strong>
+          </div>
+
+          <div class="summary-total">
+            Total : <span id="summaryTotal">0 DH</span>
+          </div>
+
+          <div class="note">
+            Paiement en ligne : cette version simule le choix du paiement.
+            Pour un vrai paiement bancaire, il faudra connecter une solution de paiement réelle.
+          </div>
+
+          <a id="whatsappBooking" class="btn btn-dark" style="width:100%; text-align:center; margin-top:15px;" href="https://wa.me/212600000000" target="_blank">
+            Envoyer la réservation sur WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" style="background:#fafafa;">
+    <div class="container">
+      <div class="section-title">
+        <h3>Contact</h3>
+        <p>Nous sommes disponibles pour répondre rapidement à vos demandes.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h4>📍 Adresse</h4>
+          <p>Marrakech, Maroc</p>
+        </div>
+        <div class="contact-box">
+          <h4>📞 WhatsApp</h4>
+          <p>+212 600 00 00 00</p>
+        </div>
+        <div class="contact-box">
+          <h4>🚗 Livraison</h4>
+          <p>Partout selon votre besoin</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <h3>MARRAKECH DRIVE</h3>
+      <p>Location de voitures à Marrakech - Réservation simple et rapide</p>
+      <div class="footer-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#vehicules">Véhicules</a>
+        <a href="#reservation">Réservation</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p>© 2026 MARRAKECH DRIVE - Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <a class="fixed-whatsapp" href="https://wa.me/212600000000" target="_blank">WhatsApp</a>
+
+  <script>
+    const carSelect = document.getElementById('car');
+    const pickupDate = document.getElementById('pickupDate');
+    const returnDate = document.getElementById('returnDate');
+
+    const summaryCar = document.getElementById('summaryCar');
+    const summaryPrice = document.getElementById('summaryPrice');
+    const summaryDays = document.getElementById('summaryDays');
+    const summaryTotal = document.getElementById('summaryTotal');
+    const whatsappBooking = document.getElementById('whatsappBooking');
+
+    function calculateBooking() {
+      const selectedOption = carSelect.options[carSelect.selectedIndex];
+      const carName = selectedOption.value || '-';
+      const dailyPrice = parseInt(selectedOption.getAttribute('data-price')) || 0;
+
+      let days = 0;
+      if (pickupDate.value && returnDate.value) {
+        const start = new Date(pickupDate.value);
+        const end = new Date(returnDate.value);
+        const diff = end - start;
+        days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        if (days < 1 || isNaN(days)) days = 0;
+      }
+
+      const total = dailyPrice * days;
+
+      summaryCar.textContent = carName;
+      summaryPrice.textContent = dailyPrice + ' DH';
+      summaryDays.textContent = days;
+      summaryTotal.textContent = total + ' DH';
+      updateWhatsAppLink(carName, dailyPrice, days, total);
+    }
+
+    function updateWhatsAppLink(carName, dailyPrice, days, total) {
+      const name = document.getElementById('name').value || '';
+      const phone = document.getElementById('phone').value || '';
+      const email = document.getElementById('email').value || '';
+      const deliveryPlace = document.getElementById('deliveryPlace').value || '';
+      const deliveryTime = document.getElementById('deliveryTime').value || '';
+      const message = document.getElementById('message').value || '';
+      const payment = document.querySelector('input[name="payment"]:checked')?.value || '';
+
+      const text = `Bonjour, je souhaite réserver une voiture chez MARRAKECH DRIVE.%0A%0A` +
+        `Nom: ${name}%0A` +
+        `Téléphone: ${phone}%0A` +
+        `Email: ${email}%0A` +
+        `Voiture: ${carName}%0A` +
+        `Prix/jour: ${dailyPrice} DH%0A` +
+        `Date départ: ${pickupDate.value}%0A` +
+        `Date retour: ${returnDate.value}%0A` +
+        `Nombre de jours: ${days}%0A` +
+        `Lieu de livraison: ${deliveryPlace}%0A` +
+        `Heure de livraison: ${deliveryTime}%0A` +
+        `Paiement: ${payment}%0A` +
+        `Total estimé: ${total} DH%0A` +
+        `Message: ${message}`;
+
+      whatsappBooking.href = `https://wa.me/212600000000?text=${text}`;
+    }
+
+    function selectCar(carName, price) {
+      for (let i = 0; i < carSelect.options.length; i++) {
+        if (carSelect.options[i].value === carName) {
+          carSelect.selectedIndex = i;
+          break;
+        }
+      }
+      calculateBooking();
+      document.getElementById('reservation').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    carSelect.addEventListener('change', calculateBooking);
+    pickupDate.addEventListener('change', calculateBooking);
+    returnDate.addEventListener('change', calculateBooking);
+
+    document.querySelectorAll('input, textarea, select').forEach(el => {
+      el.addEventListener('input', calculateBooking);
+      el.addEventListener('change', calculateBooking);
+    });
+
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      calculateBooking();
+      document.getElementById('successMessage').style.display = 'block';
+      document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
