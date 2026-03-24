@@ -8,160 +8,158 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle, #000, #111);
-  color: white;
-  text-align: center;
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:radial-gradient(circle,#000,#111);
+color:white;
+text-align:center;
 }
 
 /* TITRE 3D */
-.brand {
-  font-size: 38px;
-  font-weight: 800;
-  color: gold;
-  text-shadow: 
-    2px 2px 0 #5a4500,
-    4px 4px 0 #3d2f00,
-    6px 6px 15px rgba(0,0,0,0.6);
-  margin-top: 30px;
+.brand{
+font-size:36px;
+font-weight:800;
+color:gold;
+text-shadow:2px 2px 0 #5a4500,4px 4px 0 #3d2f00,6px 6px 15px rgba(0,0,0,0.6);
+margin-top:30px;
 }
 
 /* BOUTONS */
-.btn {
-  padding: 12px 25px;
-  margin: 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
+.btn{
+padding:12px 25px;
+margin:10px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.call { background: gold; color: black; }
-.whatsapp { background: #25D366; color: white; }
+.call{background:gold;color:black;}
+.whatsapp{background:#25D366;color:white;}
 
 /* SECTION */
-.section { padding: 40px 20px; }
+.section{padding:40px 20px;}
 
 /* FLOTTE */
-.fleet {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 15px;
+.fleet{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
 }
 
-.fleet-item {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
+.fleet-item{
+background:#1a1a1a;
+padding:20px;
+border-radius:12px;
+transition:0.3s;
 }
 
-.fleet-item:hover {
-  transform: scale(1.05);
-  border: 1px solid gold;
+.fleet-item:hover{
+transform:scale(1.05);
+border:1px solid gold;
 }
 
-.fleet-name { color: gold; font-weight: bold; }
-.fleet-note { font-size: 14px; }
-
-/* AVIS */
-.reviews {
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.review {
-  background: #1a1a1a;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 10px;
-  text-align: left;
-}
-
-.review strong { color: gold; }
-
-/* SOCIAL */
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 25px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.social-btn img { width: 22px; }
-
-.instagram {
-  background: linear-gradient(45deg,#E1306C,#F77737,#FCAF45);
-}
-
-.facebook {
-  background: #1877F2;
-}
-
-.social-btn:hover {
-  transform: scale(1.08);
-}
-
-/* FLOAT BUTTONS */
-.float {
-  position: fixed;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.float img { width: 25px; }
-
-.insta-float {
-  right: 20px;
-  bottom: 90px;
-  background: linear-gradient(45deg,#E1306C,#F77737);
-}
-
-.fb-float {
-  right: 20px;
-  bottom: 20px;
-  background: #1877F2;
-}
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 160px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-}
+.fleet-name{color:gold;font-weight:bold;}
+.fleet-note{font-size:14px;}
 
 /* FORM */
-form input, form select, form button {
-  width: 90%;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-  border: none;
+form input,form select,form button{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:8px;
+border:none;
 }
 
-button {
-  background: gold;
-  font-weight: bold;
+button{
+background:gold;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* AVIS */
+.reviews{
+max-height:300px;
+overflow-y:auto;
+}
+
+.review{
+background:#1a1a1a;
+padding:15px;
+margin:10px;
+border-radius:10px;
+text-align:left;
+}
+
+.review strong{color:gold;}
+
+/* SOCIAL */
+.socials{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.social-btn{
+display:flex;
+align-items:center;
+gap:10px;
+padding:14px 25px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
+}
+
+.social-btn img{width:22px;}
+
+.instagram{
+background:linear-gradient(45deg,#E1306C,#F77737,#FCAF45);
+}
+
+.facebook{
+background:#1877F2;
+}
+
+.social-btn:hover{
+transform:scale(1.08);
+}
+
+/* FLOAT */
+.float{
+position:fixed;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+.float img{width:25px;}
+
+.insta-float{
+right:20px;
+bottom:90px;
+background:linear-gradient(45deg,#E1306C,#F77737);
+}
+
+.fb-float{
+right:20px;
+bottom:20px;
+background:#1877F2;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:160px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
 }
 </style>
 </head>
@@ -194,7 +192,7 @@ button {
 
 <!-- RÉSERVATION -->
 <section class="section">
-<h2>Réservation rapide</h2>
+<h2>Réservation premium</h2>
 
 <form onsubmit="sendWhatsApp(event)">
 <input type="text" id="nom" placeholder="Votre nom" required>
@@ -208,10 +206,10 @@ button {
 <option>Clio 5</option>
 <option>Classe A</option>
 <option>Cupra Leon</option>
-<option>Audi A3</option>
+<option>Audi A3 S Line</option>
 </select>
 
-<button type="submit">Réserver</button>
+<button type="submit">Réserver maintenant</button>
 </form>
 </section>
 
@@ -221,24 +219,23 @@ button {
 
 <div class="reviews">
 <div class="review"><strong>Youssef B.</strong> ⭐⭐⭐⭐⭐ Service excellent</div>
-<div class="review"><strong>Karim A.</strong> ⭐⭐⭐⭐⭐ Très pro</div>
+<div class="review"><strong>Karim A.</strong> ⭐⭐⭐⭐⭐ Très professionnel</div>
 <div class="review"><strong>Amine L.</strong> ⭐⭐⭐⭐⭐ Livraison rapide</div>
 <div class="review"><strong>Sara M.</strong> ⭐⭐⭐⭐⭐ Parfait</div>
-<div class="review"><strong>Omar T.</strong> ⭐⭐⭐⭐⭐ Top</div>
-<div class="review"><strong>Mehdi R.</strong> ⭐⭐⭐⭐⭐ Sérieux</div>
-<div class="review"><strong>Fatima Z.</strong> ⭐⭐⭐⭐⭐ Excellent</div>
-<div class="review"><strong>Hicham K.</strong> ⭐⭐⭐⭐⭐ Recommande</div>
-<div class="review"><strong>Imane S.</strong> ⭐⭐⭐⭐⭐ Très bien</div>
-<div class="review"><strong>Rachid D.</strong> ⭐⭐⭐⭐⭐ Super</div>
-<div class="review"><strong>Nabil F.</strong> ⭐⭐⭐⭐⭐ Parfait</div>
-<div class="review"><strong>Salma H.</strong> ⭐⭐⭐⭐⭐ Qualité</div>
-<div class="review"><strong>Adil B.</strong> ⭐⭐⭐⭐⭐ Rapide</div>
-<div class="review"><strong>Zakaria E.</strong> ⭐⭐⭐⭐⭐ Top service</div>
-<div class="review"><strong>Soufiane M.</strong> ⭐⭐⭐⭐⭐ Excellent</div>
-<div class="review"><strong>Hassan L.</strong> ⭐⭐⭐⭐⭐ Pro</div>
-<div class="review"><strong>Nadia A.</strong> ⭐⭐⭐⭐⭐ Très satisfait</div>
+<div class="review"><strong>Omar T.</strong> ⭐⭐⭐⭐⭐ Top service</div>
+<div class="review"><strong>Fatima Z.</strong> ⭐⭐⭐⭐⭐ Très satisfait</div>
+<div class="review"><strong>Hicham K.</strong> ⭐⭐⭐⭐⭐ Je recommande</div>
+<div class="review"><strong>Imane S.</strong> ⭐⭐⭐⭐⭐ Super expérience</div>
+<div class="review"><strong>Rachid D.</strong> ⭐⭐⭐⭐⭐ Voiture propre</div>
+<div class="review"><strong>Nabil F.</strong> ⭐⭐⭐⭐⭐ Excellent</div>
+<div class="review"><strong>Salma H.</strong> ⭐⭐⭐⭐⭐ Service rapide</div>
+<div class="review"><strong>Adil B.</strong> ⭐⭐⭐⭐⭐ Qualité top</div>
+<div class="review"><strong>Zakaria E.</strong> ⭐⭐⭐⭐⭐ Très sérieux</div>
+<div class="review"><strong>Soufiane M.</strong> ⭐⭐⭐⭐⭐ Parfait</div>
+<div class="review"><strong>Hassan L.</strong> ⭐⭐⭐⭐⭐ Service pro</div>
+<div class="review"><strong>Nadia A.</strong> ⭐⭐⭐⭐⭐ Très bonne expérience</div>
 <div class="review"><strong>Yassine T.</strong> ⭐⭐⭐⭐⭐ Clean</div>
-<div class="review"><strong>Samir O.</strong> ⭐⭐⭐⭐⭐ Top</div>
+<div class="review"><strong>Samir O.</strong> ⭐⭐⭐⭐⭐ Top qualité</div>
 <div class="review"><strong>Ilham K.</strong> ⭐⭐⭐⭐⭐ Luxe</div>
 <div class="review"><strong>Anas R.</strong> ⭐⭐⭐⭐⭐ 10/10</div>
 </div>
@@ -273,7 +270,16 @@ e.preventDefault();
 let nom=document.getElementById("nom").value;
 let date=document.getElementById("date").value;
 let voiture=document.getElementById("voiture").value;
-let msg=`Bonjour, je suis ${nom}, je veux réserver ${voiture} pour le ${date}`;
+
+let msg=`✨ Bonjour, je souhaite effectuer une réservation chez LAARF RENT CAR & AOL LUXURY RENT CAR.
+
+👤 Nom : ${nom}
+🚘 Véhicule : ${voiture}
+📅 Date : ${date}
+📍 Marrakech
+
+Merci de me confirmer la disponibilité.`;
+
 window.open(`https://wa.me/212664781956?text=${encodeURIComponent(msg)}`);
 }
 </script>
