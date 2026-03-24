@@ -16,16 +16,16 @@ color:white;
 text-align:center;
 }
 
-/* TITRE */
 .brand{
-font-size:36px;
+font-size:34px;
 font-weight:800;
 color:gold;
 margin-top:30px;
 text-shadow:2px 2px 10px black;
 }
 
-/* BOUTONS */
+.section{padding:40px 20px;}
+
 .btn{
 padding:12px 25px;
 margin:10px;
@@ -33,30 +33,21 @@ border-radius:10px;
 text-decoration:none;
 font-weight:bold;
 }
-
 .call{background:gold;color:black;}
 .whatsapp{background:#25D366;color:white;}
 
-/* SECTION */
-.section{padding:40px 20px;}
-
-/* FLOTTE */
 .fleet{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
 }
-
 .fleet-item{
 background:#1a1a1a;
 padding:20px;
 border-radius:12px;
 }
-
 .fleet-name{color:gold;font-weight:bold;}
-.fleet-note{font-size:14px;}
 
-/* FORM */
 input,select{
 width:90%;
 padding:10px;
@@ -74,11 +65,23 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* PRIX */
 .price{
-font-size:22px;
+font-size:20px;
 color:gold;
-margin-top:10px;
+}
+
+/* IMAGES AVEC LOGO */
+.image-box{position:relative;}
+.image-box img{width:100%;border-radius:12px;}
+.logo{
+position:absolute;
+bottom:10px;
+left:10px;
+color:gold;
+background:rgba(0,0,0,0.7);
+padding:5px 10px;
+border-radius:5px;
+font-size:12px;
 }
 
 /* SOCIAL */
@@ -87,14 +90,12 @@ display:flex;
 justify-content:center;
 gap:20px;
 }
-
 .social-btn{
 padding:12px 20px;
 border-radius:10px;
 color:white;
 text-decoration:none;
 }
-
 .instagram{background:linear-gradient(45deg,#E1306C,#F77737);}
 .facebook{background:#1877F2;}
 </style>
@@ -105,33 +106,57 @@ text-decoration:none;
 <h1 class="brand">LAARF RENT CAR</h1>
 <h1 class="brand">& AOL LUXURY RENT CAR</h1>
 
-<p>Location de voitures à Marrakech</p>
+<p>Location de voitures premium à Marrakech</p>
 
 <a href="tel:06647819956" class="btn call">📞 Appeler</a>
 <a href="https://wa.me/212664781956" class="btn whatsapp">💬 WhatsApp</a>
+
+<!-- IMAGES -->
+<section class="section">
+<h2>Nos véhicules</h2>
+
+<div class="fleet">
+
+<div class="image-box">
+<img src="https://images.unsplash.com/photo-1555215695-3004980ad54c">
+<div class="logo">LAARF RENT CAR</div>
+</div>
+
+<div class="image-box">
+<img src="https://images.unsplash.com/photo-1549924231-f129b911e442">
+<div class="logo">AOL LUXURY RENT CAR</div>
+</div>
+
+<div class="image-box">
+<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+<div class="logo">LAARF & AOL</div>
+</div>
+
+</div>
+</section>
 
 <!-- FLOTTE -->
 <section class="section">
 <h2>Notre flotte</h2>
 
 <div class="fleet">
-<div class="fleet-item"><div class="fleet-name">Porsche Macan</div><div class="fleet-note">2000 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Golf 8.5 Style</div><div class="fleet-note">800 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Golf 8.5 R-Line</div><div class="fleet-note">1000 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Touareg</div><div class="fleet-note">1300 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">T-Roc</div><div class="fleet-note">700 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Audi A3 S-line</div><div class="fleet-note">1200 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Classe A</div><div class="fleet-note">1200 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Clio 5 BVA</div><div class="fleet-note">350 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Clio 5 BVM</div><div class="fleet-note">300 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Opel Corsa</div><div class="fleet-note">300 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Fiat 500 Cabriolet</div><div class="fleet-note">350 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Porsche Macan - 2000 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Golf 8.5 Style - 800 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Golf 8.5 R-Line - 1000 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Touareg - 1300 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">T-Roc - 700 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Audi A3 S-line - 1200 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Classe A - 1200 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Clio 5 BVA - 350 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Clio 5 BVM - 300 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Opel Corsa - 300 DH</div></div>
+<div class="fleet-item"><div class="fleet-name">Fiat 500 Cabriolet - 350 DH</div></div>
 </div>
 </section>
 
 <!-- SIMULATEUR -->
 <section class="section">
-<h2>Simulateur de réservation</h2>
+<h2>Simulation de réservation</h2>
 
 <input type="text" id="nom" placeholder="Votre nom">
 
@@ -142,19 +167,22 @@ text-decoration:none;
 <option value="1000">Golf 8.5 R-Line</option>
 <option value="1300">Touareg</option>
 <option value="700">T-Roc</option>
-<option value="1200">Audi A3 S-line</option>
+<option value="1200">Audi A3</option>
 <option value="1200">Classe A</option>
-<option value="350">Clio 5 BVA</option>
-<option value="300">Clio 5 BVM</option>
-<option value="300">Opel Corsa</option>
-<option value="350">Fiat 500 Cabriolet</option>
+<option value="350">Clio BVA</option>
+<option value="300">Clio BVM</option>
+<option value="300">Corsa</option>
+<option value="350">Fiat 500</option>
 </select>
 
-<input type="number" id="jours" placeholder="Nombre de jours" oninput="calculer()">
+<input type="date" id="debut" onchange="calculer()">
+<input type="date" id="fin" onchange="calculer()">
 
+<div class="price" id="jours">Durée : 0 jours</div>
 <div class="price" id="total">Total : 0 DH</div>
+<div class="price" id="promo"></div>
 
-<button onclick="reserver()">Réserver maintenant</button>
+<button onclick="reserver()">Réserver</button>
 </section>
 
 <!-- SOCIAL -->
@@ -169,34 +197,43 @@ text-decoration:none;
 
 <script>
 function calculer(){
-let prix = document.getElementById("voiture").value;
-let jours = document.getElementById("jours").value;
+let prix=document.getElementById("voiture").value;
+let debut=new Date(document.getElementById("debut").value);
+let fin=new Date(document.getElementById("fin").value);
 
-if(prix && jours){
-let total = prix * jours;
-document.getElementById("total").innerHTML = "Total : " + total + " DH";
+if(prix && debut && fin && fin>debut){
+let jours=(fin-debut)/(1000*60*60*24);
+let total=jours*prix;
+let promo="";
+
+if(jours>=7){ total*=0.9; promo="Remise -10%"; }
+if(jours>=15){ total*=0.8; promo="Remise -20%"; }
+
+document.getElementById("jours").innerHTML="Durée : "+jours+" jours";
+document.getElementById("total").innerHTML="Total : "+Math.round(total)+" DH";
+document.getElementById("promo").innerHTML=promo;
 }
 }
 
 function reserver(){
-let nom = document.getElementById("nom").value;
-let voiture = document.getElementById("voiture");
-let voitureNom = voiture.options[voiture.selectedIndex].text;
-let prix = voiture.value;
-let jours = document.getElementById("jours").value;
-let total = prix * jours;
+let nom=document.getElementById("nom").value;
+let voiture=document.getElementById("voiture").options[document.getElementById("voiture").selectedIndex].text;
+let debut=document.getElementById("debut").value;
+let fin=document.getElementById("fin").value;
+let total=document.getElementById("total").innerText;
 
-let msg = `✨ Nouvelle demande de réservation
+let msg=`✨ Nouvelle réservation
 
 👤 Nom : ${nom}
-🚘 Véhicule : ${voitureNom}
-📅 Durée : ${jours} jours
-💰 Total : ${total} DH
+🚘 Véhicule : ${voiture}
+📅 Du : ${debut}
+📅 Au : ${fin}
+${total}
 📍 Marrakech
 
 Merci de confirmer la disponibilité.`;
 
-window.open(`https://wa.me/212664781956?text=${encodeURIComponent(msg)}`);
+window.open("https://wa.me/212664781956?text="+encodeURIComponent(msg));
 }
 </script>
 
