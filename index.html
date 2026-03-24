@@ -16,13 +16,13 @@ color:white;
 text-align:center;
 }
 
-/* TITRE 3D */
+/* TITRE */
 .brand{
 font-size:36px;
 font-weight:800;
 color:gold;
-text-shadow:2px 2px 0 #5a4500,4px 4px 0 #3d2f00,6px 6px 15px rgba(0,0,0,0.6);
 margin-top:30px;
+text-shadow:2px 2px 10px black;
 }
 
 /* BOUTONS */
@@ -51,19 +51,13 @@ gap:15px;
 background:#1a1a1a;
 padding:20px;
 border-radius:12px;
-transition:0.3s;
-}
-
-.fleet-item:hover{
-transform:scale(1.05);
-border:1px solid gold;
 }
 
 .fleet-name{color:gold;font-weight:bold;}
 .fleet-note{font-size:14px;}
 
 /* FORM */
-form input,form select,form button{
+input,select{
 width:90%;
 padding:10px;
 margin:10px;
@@ -73,94 +67,36 @@ border:none;
 
 button{
 background:gold;
+padding:12px;
+border:none;
+border-radius:8px;
 font-weight:bold;
 cursor:pointer;
 }
 
-/* AVIS */
-.reviews{
-max-height:300px;
-overflow-y:auto;
+/* PRIX */
+.price{
+font-size:22px;
+color:gold;
+margin-top:10px;
 }
-
-.review{
-background:#1a1a1a;
-padding:15px;
-margin:10px;
-border-radius:10px;
-text-align:left;
-}
-
-.review strong{color:gold;}
 
 /* SOCIAL */
 .socials{
 display:flex;
 justify-content:center;
-gap:25px;
-flex-wrap:wrap;
+gap:20px;
 }
 
 .social-btn{
-display:flex;
-align-items:center;
-gap:10px;
-padding:14px 25px;
-border-radius:12px;
-text-decoration:none;
+padding:12px 20px;
+border-radius:10px;
 color:white;
-font-weight:bold;
-transition:0.3s;
+text-decoration:none;
 }
 
-.social-btn img{width:22px;}
-
-.instagram{
-background:linear-gradient(45deg,#E1306C,#F77737,#FCAF45);
-}
-
-.facebook{
-background:#1877F2;
-}
-
-.social-btn:hover{
-transform:scale(1.08);
-}
-
-/* FLOAT */
-.float{
-position:fixed;
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
-}
-
-.float img{width:25px;}
-
-.insta-float{
-right:20px;
-bottom:90px;
-background:linear-gradient(45deg,#E1306C,#F77737);
-}
-
-.fb-float{
-right:20px;
-bottom:20px;
-background:#1877F2;
-}
-
-.whatsapp-float{
-position:fixed;
-bottom:160px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-}
+.instagram{background:linear-gradient(45deg,#E1306C,#F77737);}
+.facebook{background:#1877F2;}
 </style>
 </head>
 
@@ -169,7 +105,7 @@ border-radius:50%;
 <h1 class="brand">LAARF RENT CAR</h1>
 <h1 class="brand">& AOL LUXURY RENT CAR</h1>
 
-<p>Location de voitures premium à Marrakech</p>
+<p>Location de voitures à Marrakech</p>
 
 <a href="tel:06647819956" class="btn call">📞 Appeler</a>
 <a href="https://wa.me/212664781956" class="btn whatsapp">💬 WhatsApp</a>
@@ -179,66 +115,46 @@ border-radius:50%;
 <h2>Notre flotte</h2>
 
 <div class="fleet">
-<div class="fleet-item"><div class="fleet-name">Porsche Macan</div><div class="fleet-note">2200 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Golf 8</div><div class="fleet-note">800 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Porsche Macan</div><div class="fleet-note">2000 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Golf 8.5 Style</div><div class="fleet-note">800 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Golf 8.5 R-Line</div><div class="fleet-note">1000 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Touareg</div><div class="fleet-note">1300 DH / jour</div></div>
 <div class="fleet-item"><div class="fleet-name">T-Roc</div><div class="fleet-note">700 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Touareg</div><div class="fleet-note">1200 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Clio 5</div><div class="fleet-note">300 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Classe A</div><div class="fleet-note">900 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Cupra Leon</div><div class="fleet-note">850 DH / jour</div></div>
-<div class="fleet-item"><div class="fleet-name">Audi A3 S Line</div><div class="fleet-note">1000 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Audi A3 S-line</div><div class="fleet-note">1200 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Classe A</div><div class="fleet-note">1200 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Clio 5 BVA</div><div class="fleet-note">350 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Clio 5 BVM</div><div class="fleet-note">300 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Opel Corsa</div><div class="fleet-note">300 DH / jour</div></div>
+<div class="fleet-item"><div class="fleet-name">Fiat 500 Cabriolet</div><div class="fleet-note">350 DH / jour</div></div>
 </div>
 </section>
 
-<!-- RÉSERVATION -->
+<!-- SIMULATEUR -->
 <section class="section">
-<h2>Réservation premium</h2>
+<h2>Simulateur de réservation</h2>
 
-<form onsubmit="sendWhatsApp(event)">
-<input type="text" id="nom" placeholder="Votre nom" required>
-<input type="date" id="date" required>
+<input type="text" id="nom" placeholder="Votre nom">
 
-<select id="voiture">
-<option>Porsche Macan</option>
-<option>Golf 8</option>
-<option>T-Roc</option>
-<option>Touareg</option>
-<option>Clio 5</option>
-<option>Classe A</option>
-<option>Cupra Leon</option>
-<option>Audi A3 S Line</option>
+<select id="voiture" onchange="calculer()">
+<option value="">Choisir véhicule</option>
+<option value="2000">Porsche Macan</option>
+<option value="800">Golf 8.5 Style</option>
+<option value="1000">Golf 8.5 R-Line</option>
+<option value="1300">Touareg</option>
+<option value="700">T-Roc</option>
+<option value="1200">Audi A3 S-line</option>
+<option value="1200">Classe A</option>
+<option value="350">Clio 5 BVA</option>
+<option value="300">Clio 5 BVM</option>
+<option value="300">Opel Corsa</option>
+<option value="350">Fiat 500 Cabriolet</option>
 </select>
 
-<button type="submit">Réserver maintenant</button>
-</form>
-</section>
+<input type="number" id="jours" placeholder="Nombre de jours" oninput="calculer()">
 
-<!-- AVIS -->
-<section class="section">
-<h2>Avis clients</h2>
+<div class="price" id="total">Total : 0 DH</div>
 
-<div class="reviews">
-<div class="review"><strong>Youssef B.</strong> ⭐⭐⭐⭐⭐ Service excellent</div>
-<div class="review"><strong>Karim A.</strong> ⭐⭐⭐⭐⭐ Très professionnel</div>
-<div class="review"><strong>Amine L.</strong> ⭐⭐⭐⭐⭐ Livraison rapide</div>
-<div class="review"><strong>Sara M.</strong> ⭐⭐⭐⭐⭐ Parfait</div>
-<div class="review"><strong>Omar T.</strong> ⭐⭐⭐⭐⭐ Top service</div>
-<div class="review"><strong>Fatima Z.</strong> ⭐⭐⭐⭐⭐ Très satisfait</div>
-<div class="review"><strong>Hicham K.</strong> ⭐⭐⭐⭐⭐ Je recommande</div>
-<div class="review"><strong>Imane S.</strong> ⭐⭐⭐⭐⭐ Super expérience</div>
-<div class="review"><strong>Rachid D.</strong> ⭐⭐⭐⭐⭐ Voiture propre</div>
-<div class="review"><strong>Nabil F.</strong> ⭐⭐⭐⭐⭐ Excellent</div>
-<div class="review"><strong>Salma H.</strong> ⭐⭐⭐⭐⭐ Service rapide</div>
-<div class="review"><strong>Adil B.</strong> ⭐⭐⭐⭐⭐ Qualité top</div>
-<div class="review"><strong>Zakaria E.</strong> ⭐⭐⭐⭐⭐ Très sérieux</div>
-<div class="review"><strong>Soufiane M.</strong> ⭐⭐⭐⭐⭐ Parfait</div>
-<div class="review"><strong>Hassan L.</strong> ⭐⭐⭐⭐⭐ Service pro</div>
-<div class="review"><strong>Nadia A.</strong> ⭐⭐⭐⭐⭐ Très bonne expérience</div>
-<div class="review"><strong>Yassine T.</strong> ⭐⭐⭐⭐⭐ Clean</div>
-<div class="review"><strong>Samir O.</strong> ⭐⭐⭐⭐⭐ Top qualité</div>
-<div class="review"><strong>Ilham K.</strong> ⭐⭐⭐⭐⭐ Luxe</div>
-<div class="review"><strong>Anas R.</strong> ⭐⭐⭐⭐⭐ 10/10</div>
-</div>
+<button onclick="reserver()">Réserver maintenant</button>
 </section>
 
 <!-- SOCIAL -->
@@ -246,39 +162,39 @@ border-radius:50%;
 <h2>Suivez-nous</h2>
 
 <div class="socials">
-<a href="https://www.instagram.com/laarf.rentcar?igsh=MXh4ejZjeTRoeXAxcA==" target="_blank" class="social-btn instagram">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">Instagram</a>
-
-<a href="https://www.facebook.com/share/1CJbqu7n8S/?mibextid=wwXIfr" target="_blank" class="social-btn facebook">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">Facebook</a>
+<a href="https://www.instagram.com/laarf.rentcar?igsh=MXh4ejZjeTRoeXAxcA==" target="_blank" class="social-btn instagram">Instagram</a>
+<a href="https://www.facebook.com/share/1CJbqu7n8S/?mibextid=wwXIfr" target="_blank" class="social-btn facebook">Facebook</a>
 </div>
 </section>
 
-<p>📍 Marrakech | 📞 06647819956</p>
-
-<!-- FLOAT -->
-<a class="whatsapp-float" href="https://wa.me/212664781956">💬</a>
-<a class="float insta-float" href="https://www.instagram.com/laarf.rentcar?igsh=MXh4ejZjeTRoeXAxcA==" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-
-<a class="float fb-float" href="https://www.facebook.com/share/1CJbqu7n8S/?mibextid=wwXIfr" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-
 <script>
-function sendWhatsApp(e){
-e.preventDefault();
-let nom=document.getElementById("nom").value;
-let date=document.getElementById("date").value;
-let voiture=document.getElementById("voiture").value;
+function calculer(){
+let prix = document.getElementById("voiture").value;
+let jours = document.getElementById("jours").value;
 
-let msg=`✨ Bonjour, je souhaite effectuer une réservation chez LAARF RENT CAR & AOL LUXURY RENT CAR.
+if(prix && jours){
+let total = prix * jours;
+document.getElementById("total").innerHTML = "Total : " + total + " DH";
+}
+}
+
+function reserver(){
+let nom = document.getElementById("nom").value;
+let voiture = document.getElementById("voiture");
+let voitureNom = voiture.options[voiture.selectedIndex].text;
+let prix = voiture.value;
+let jours = document.getElementById("jours").value;
+let total = prix * jours;
+
+let msg = `✨ Nouvelle demande de réservation
 
 👤 Nom : ${nom}
-🚘 Véhicule : ${voiture}
-📅 Date : ${date}
+🚘 Véhicule : ${voitureNom}
+📅 Durée : ${jours} jours
+💰 Total : ${total} DH
 📍 Marrakech
 
-Merci de me confirmer la disponibilité.`;
+Merci de confirmer la disponibilité.`;
 
 window.open(`https://wa.me/212664781956?text=${encodeURIComponent(msg)}`);
 }
