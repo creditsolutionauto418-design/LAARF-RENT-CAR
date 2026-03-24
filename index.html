@@ -369,6 +369,34 @@
       }
     }
   </style>
+  .socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  padding: 14px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #E1306C, #F77737, #FCAF45);
+}
+
+.facebook {
+  background: #1877F2;
+}
+
+.social-btn:hover {
+  transform: scale(1.05);
+}
 </head>
 <body>
 
@@ -564,7 +592,21 @@
     <div>📍 Marrakech | 📞 06647819956</div>
     <div class="footer-brand">LAARF RENT CAR & AOL LUXURY RENT CAR</div>
   </footer>
+  <section class="section">
+  <div class="container">
+    <h2 class="section-title">Suivez-nous</h2>
 
+    <div class="socials">
+      <a href="https://www.instagram.com/laarf_rent_car" target="_blank" class="social-btn instagram">
+        📸 Instagram
+      </a>
+
+      <a href="https://www.facebook.com/medamine.laarf" target="_blank" class="social-btn facebook">
+        👍 Facebook
+      </a>
+    </div>
+  </div>
+</section>
   <a class="whatsapp-float" href="https://wa.me/212664781956" target="_blank" aria-label="WhatsApp">💬</a>
 
   <script>
