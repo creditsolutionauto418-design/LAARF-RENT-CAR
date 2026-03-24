@@ -41,11 +41,13 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
 }
+
 .fleet-item{
 background:#1a1a1a;
 padding:20px;
 border-radius:12px;
 }
+
 .fleet-name{color:gold;font-weight:bold;}
 
 input,select{
@@ -70,25 +72,12 @@ font-size:20px;
 color:gold;
 }
 
-/* IMAGES AVEC LOGO */
-.image-box{position:relative;}
-.image-box img{width:100%;border-radius:12px;}
-.logo{
-position:absolute;
-bottom:10px;
-left:10px;
-color:gold;
-background:rgba(0,0,0,0.7);
-padding:5px 10px;
-border-radius:5px;
-font-size:12px;
-}
-
 /* SOCIAL */
 .socials{
 display:flex;
 justify-content:center;
 gap:20px;
+flex-wrap:wrap;
 }
 .social-btn{
 padding:12px 20px;
@@ -110,30 +99,6 @@ text-decoration:none;
 
 <a href="tel:06647819956" class="btn call">📞 Appeler</a>
 <a href="https://wa.me/212664781956" class="btn whatsapp">💬 WhatsApp</a>
-
-<!-- IMAGES -->
-<section class="section">
-<h2>Nos véhicules</h2>
-
-<div class="fleet">
-
-<div class="image-box">
-<img src="https://images.unsplash.com/photo-1555215695-3004980ad54c">
-<div class="logo">LAARF RENT CAR</div>
-</div>
-
-<div class="image-box">
-<img src="https://images.unsplash.com/photo-1549924231-f129b911e442">
-<div class="logo">AOL LUXURY RENT CAR</div>
-</div>
-
-<div class="image-box">
-<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-<div class="logo">LAARF & AOL</div>
-</div>
-
-</div>
-</section>
 
 <!-- FLOTTE -->
 <section class="section">
@@ -157,6 +122,8 @@ text-decoration:none;
 <!-- SIMULATEUR -->
 <section class="section">
 <h2>Simulation de réservation</h2>
+
+<p style="color:gold;">Exemple : du 10/03/2026 au 17/03/2026</p>
 
 <input type="text" id="nom" placeholder="Votre nom">
 
