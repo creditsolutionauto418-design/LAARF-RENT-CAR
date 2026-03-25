@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAARF RENT CAR & AOL LUXURY RENT CAR</title>
+<title>LAARF RENT CAR</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
@@ -11,52 +11,45 @@
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:radial-gradient(circle,#000,#111);
+background:black;
 color:white;
+}
+
+/* HEADER /
+.header{
 text-align:center;
+padding:20px;
+background:linear-gradient(to bottom, #000, #111);
 }
 
-/* TITRE /
-.brand{
-font-size:36px;
+.title{
+font-size:26px;
 font-weight:800;
-background:linear-gradient(180deg,#FFD700,#d4af37);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-top:20px;
+color:gold;
 }
 
-/ BADGE /
-.badge{
-margin-top:10px;
-padding:8px 20px;
-border-radius:20px;
-background:gold;
-color:black;
-font-weight:bold;
-display:inline-block;
+.subtitle{
+font-size:14px;
+color:#ccc;
 }
 
-/ SECTION /
-.section{
-padding:40px 15px;
-}
-
-/ FLOTTE /
+/ GRID /
 .fleet{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+grid-template-columns:1fr;
 gap:15px;
+padding:15px;
 }
 
-/ CARD LUXE /
+/ CARD /
 .car{
 position:relative;
-border-radius:20px;
+border-radius:15px;
 overflow:hidden;
 height:220px;
 }
 
+/ IMAGE /
 .car img{
 width:100%;
 height:100%;
@@ -68,182 +61,100 @@ object-fit:cover;
 position:absolute;
 bottom:0;
 width:100%;
-padding:10px;
+padding:15px;
 background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
 }
 
-/ NOM /
+/ TEXT /
 .car-name{
-font-size:15px;
-font-weight:800;
-color:#FFD700;
+font-size:18px;
+font-weight:bold;
+color:gold;
 }
 
-/ PRIX /
 .price{
-font-size:14px;
+font-size:16px;
+margin-top:5px;
 }
 
-/ BOUTON /
-.card-btn{
-margin-top:5px;
+/ BUTTON /
+.btn{
+margin-top:10px;
 display:inline-block;
 background:#25D366;
-padding:5px 10px;
-border-radius:6px;
-color:white;
-font-size:12px;
-text-decoration:none;
-}
-
-/ BOUTONS HAUT */
-.btn{
-padding:10px 20px;
-margin:10px;
+padding:10px 15px;
 border-radius:10px;
+color:white;
 text-decoration:none;
 font-weight:bold;
 }
 
-.call{
-background:gold;
-color:black;
-}
-
-.whatsapp{
+/ FLOAT WHATSAPP */
+.float{
+position:fixed;
+bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="brand">LAARF RENT CAR</div>
-<div class="brand">& AOL LUXURY RENT CAR</div>
-
-<div class="badge">⭐ Service Premium Marrakech</div>
-
-<a href="tel:06647819956" class="btn call">📞 Appeler</a>
-<a href="https://wa.me/212664781956" class="btn whatsapp">💬 WhatsApp</a>
-
-<section class="section">
-<h2 style="color:gold;">Notre flotte</h2>
+<div class="header">
+<div class="title">LAARF RENT CAR</div>
+<div class="subtitle">Location de voitures à Marrakech</div>
+</div>
 
 <div class="fleet">
 
 <!-- Porsche -->
 <div class="car">
-<img src="https://images.unsplash.com/photo-1616788494672-ec7ca25fdda6">
+<img src="https://picsum.photos/400/300?random=1">
 <div class="overlay">
 <div class="car-name">Porsche Macan</div>
 <div class="price">2000 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Porsche Macan" class="card-btn">WhatsApp</a>
+<a href="https://wa.me/212664781956?text=Porsche Macan" class="btn">WhatsApp</a>
 </div>
 </div>
 
-<!-- Golf Style -->
+<!-- Golf -->
 <div class="car">
-<img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2">
+<img src="https://picsum.photos/400/300?random=2">
 <div class="overlay">
 <div class="car-name">Golf 8.5 Style</div>
 <div class="price">800 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Golf 8.5 Style" class="card-btn">WhatsApp</a>
-</div>
-</div>
-
-<!-- Golf R -->
-<div class="car">
-<img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a">
-<div class="overlay">
-<div class="car-name">Golf 8.5 R-Line</div>
-<div class="price">1000 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Golf R-Line" class="card-btn">WhatsApp</a>
-</div>
-</div>
-
-<!-- Touareg -->
-<div class="car">
-<img src="https://images.unsplash.com/photo-1616788494613-9c4b6d7e5c9b">
-<div class="overlay">
-<div class="car-name">Touareg</div>
-<div class="price">1300 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Touareg" class="card-btn">WhatsApp</a>
-</div>
-</div>
-
-<!-- T-Roc -->
-<div class="car">
-<img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb">
-<div class="overlay">
-<div class="car-name">T-Roc</div>
-<div class="price">700 DH / jour</div>
-<a href="https://wa.me/212664781956?text=T-Roc" class="card-btn">WhatsApp</a>
-</div>
-</div>
-
-<!-- Audi -->
-<div class="car">
-<img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6">
-<div class="overlay">
-<div class="car-name">Audi A3</div>
-<div class="price">1200 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Audi A3" class="card-btn">WhatsApp</a>
+<a href="https://wa.me/212664781956?text=Golf Style" class="btn">WhatsApp</a>
 </div>
 </div>
 
 <!-- Mercedes -->
 <div class="car">
-<img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8">
+<img src="https://picsum.photos/400/300?random=3">
 <div class="overlay">
 <div class="car-name">Classe A</div>
 <div class="price">1200 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Classe A" class="card-btn">WhatsApp</a>
+<a href="https://wa.me/212664781956?text=Classe A" class="btn">WhatsApp</a>
 </div>
 </div>
 
-<!-- Clio BVA -->
+<!-- Clio -->
 <div class="car">
-<img src="https://images.unsplash.com/photo-1590362891991-f776e747a588">
+<img src="https://picsum.photos/400/300?random=4">
 <div class="overlay">
-<div class="car-name">Clio 5 BVA</div>
-<div class="price">350 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Clio BVA" class="card-btn">WhatsApp</a>
-</div>
-</div>
-
-<!-- Clio BVM -->
-<div class="car">
-<img src="https://images.unsplash.com/photo-1590362891991-f776e747a588">
-<div class="overlay">
-<div class="car-name">Clio 5 BVM</div>
+<div class="car-name">Clio 5</div>
 <div class="price">300 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Clio BVM" class="card-btn">WhatsApp</a>
-</div>
-</div>
-
-<!-- Corsa -->
-<div class="car">
-<img src="https://images.unsplash.com/photo-1610917040803-1fccf9623064">
-<div class="overlay">
-<div class="car-name">Opel Corsa</div>
-<div class="price">300 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Corsa" class="card-btn">WhatsApp</a>
-</div>
-</div>
-
-<!-- Fiat -->
-<div class="car">
-<img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6">
-<div class="overlay">
-<div class="car-name">Fiat 500 Cabriolet</div>
-<div class="price">350 DH / jour</div>
-<a href="https://wa.me/212664781956?text=Fiat 500" class="card-btn">WhatsApp</a>
+<a href="https://wa.me/212664781956?text=Clio 5" class="btn">WhatsApp</a>
 </div>
 </div>
 
 </div>
-</section>
+
+<a href="https://wa.me/212664781956" class="float">💬</a>
 
 </body>
 </html>
